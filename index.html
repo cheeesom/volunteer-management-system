@@ -1,16 +1,22 @@
+<!-- Landing page -->
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Volunteer-Management-System</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/landingpage.css" />
   </head>
   <body>
     <header>
-      <nav class="header-nav">
-        <div class="nav-group">
-          <a href="index.html">
+      <div class="nav-container">
+        <nav class="header-nav">
+          <a class="header-logo" href="index.html">
             <img src="./assets/logo/logo.svg" alt="Volunity Logo" />
           </a>
 
@@ -22,9 +28,357 @@
             <li class="nav-item"><a href="#Contact">Contact</a></li>
           </ul>
 
-          <a href="pages/signup.html">Get started</a>
-        </div>
-      </nav>
+          <a href="#pages/signup.html" class="get-started-link"
+            >Get started
+            <img src="./assets/icons/icons-arrow-right.svg" alt="arrow icon" />
+          </a>
+        </nav>
+      </div>
     </header>
+
+    <main>
+      <!-- Hero section -->
+      <section class="hero-container">
+        <div class="hero-top">
+          <div class="hero-heading">
+            <h1>Where Willing Hands <br />Meet Real Impact</h1>
+          </div>
+
+          <div class="hero-content">
+            <p>
+              Volunity brings volunteers, NGO's, and the communities they serve
+              <br />
+              onto one platform, so help finds its way to people who need it,<br />
+              without spreedsheets, guesswork, or missed connections.
+            </p>
+            <a href="#pages/signup.html" class="join-volunity"
+              >Join Volunity
+              <img
+                src="./assets/icons/icons-arrow-right.svg"
+                alt="arrow icon"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img
+            src="./assets/images/first-landingpage-img.jpg"
+            alt="first-landingpage-img"
+          />
+        </div>
+      </section>
+      <section class="trusted-by-section">
+        <div class="trusted-logos">
+          <img src="./assets/icons/hama 1.svg" alt="hama" />
+          <img src="./assets/icons/mastercard-modern-design- 1.svg" alt="ma" />
+          <img
+            src="./assets/icons/carrefour-logo-1 1.svg"
+            alt="carrefour-logo-1"
+          />
+          <img src="./assets/icons/google.jpg" alt="google" />
+          <img src="./assets/icons/logo-amazon 1 (1).svg" alt="amazon" />
+          <img src="./assets/icons/Vector.svg" alt="KV" />
+        </div>
+      </section>
+
+      <section class="work-section">
+        <p class="section-tag">See it in Action</p>
+        <h2 class="section-title">The Work, As It Actually Happens</h2>
+      </section>
+
+      <section class="work-images">
+        <div class="top-images">
+          <div class="volunteers-images">
+            <img
+              src="./assets/images/volunteers-teaching.jpg"
+              alt="volunteers-teaching"
+            />
+            <p>Volunteer teaching in community classrooms</p>
+          </div>
+
+          <div class="volunteers-images">
+            <img
+              src="./assets/images/supplies-delivery.jpg"
+              alt="supplies-delivery"
+            />
+            <p>Supplies delivered straight to the people who need them</p>
+          </div>
+          <div class="volunteers-images">
+            <img
+              src="./assets/images/volunteer-community-building.jpg"
+              alt="volunteer-community-building"
+            />
+            <p>Volunteer and community building side by side</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="bottom-images">
+          <img src="./assets/images/vol-community-photo-1.jpg" alt="" />
+          <img src="./assets/images/children-photos-comm-photos-2.jpg" alt="" />
+          <img src="./assets/images/vol-comm-photos-3.jpg" alt="" />
+          <img src="./assets/images/vol-comm-photos-4.jpg" alt="" />
+          <img src="./assets/images/vol-comm-photos-5.jpg" alt="" />
+        </div>
+      </section>
+
+      <section>
+        <div class="how-volunity-works">
+          <h2>How Volunity Works</h2>
+          <p>
+            Three steps take you from signing up to actually making a <br />
+            difference, wether you're giving your time or running the project.
+          </p>
+        </div>
+      </section>
+
+      <section class="how-it-works">
+        <div class="how-it-works-container">
+          <div class="how-it-works-card">
+            <div class="how-it-works-card-icon">
+              <img src="./assets/icons/create-a-project.svg" alt="" />
+            </div>
+            <h3>Create your profile</h3>
+            <p>
+              Volunteer lists their skills and availability, <br />
+              NGO's register their organization and set up their first
+              <br />project.
+            </p>
+          </div>
+
+          <div class="how-it-works-card">
+            <div class="how-it-works-card-icon">
+              <img
+                src="./assets/icons/get-matched-a-project-icon (2).svg"
+                alt=""
+              />
+            </div>
+            <h3>Get matched to a project</h3>
+            <p>
+              Coordinators assign tasks that actually fit your <br />
+              skill and schedule, instead of a mass message <br />
+              hoping someone bites.
+            </p>
+          </div>
+
+          <div class="how-it-works-card">
+            <div class="how-it-works-card-icon">
+              <img src="./assets/icons/track-your-impact.svg" alt="" />
+            </div>
+            <h3>Track your impact</h3>
+            <p>
+              Log your hours, complete tasks, and watch your <br />
+              contribution add up in a record you and your NGO <br />
+              can both see.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="impact">
+        <div class="impact-container">
+          <span class="impact-badge">The Imact So Far</span>
+
+          <h2 class="impact-heading">
+            Every Number Is a Person Who <br />
+            Showed Up
+          </h2>
+          <div class="impact-grid">
+            <!-- column 1 -->
+            <div class="column">
+              <article class="stat-card-green">
+                <h3>12,400+</h3>
+                <p>
+                  Volunteers actively showing up for real <br />
+                  projects, not just signed up and <br />
+                  forgotten.
+                </p>
+              </article>
+              <img src="./assets/images/vol-organizing-photo-1.jpg" alt="" />
+            </div>
+
+            <!-- column 2 -->
+            <div class="column">
+              <img
+                class="tall-image"
+                src="./assets/images/vol-organizing-photo-2.jpg"
+                alt=""
+              />
+            </div>
+            <!-- column 3 -->
+            <div class="column">
+              <img src="./assets/images/vol-organizing-photo-3.jpg" alt="" />
+
+              <article class="stat-card-yellow">
+                <h3>42,850 hrs</h3>
+                <p>
+                  Logged by volunteers across every active <br />
+                  project, tracked, not estimated.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <div class="impact-footer">
+            <h2>
+              Organized effort, run by <br />
+              people who show up.
+            </h2>
+            <p>
+              Behind every number is a real coordinator and a <br />
+              real community. 340+ NGO's run verified projects <br />
+              on volunity across 18 countries, with every hour <br />
+              tracked and accounted for.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="difference">
+        <div class="difference-container">
+          <div class="difference-image">
+            <img
+              src="./assets/images/before-and-after-volunity-photo.jpg"
+              alt=""
+            />
+          </div>
+          <div class="difference-content">
+            <span class="difference-tag"> <h3>Real Change</h3></span>
+            <h2>
+              The Difference Oranized <br />
+              Effort Makes
+            </h2>
+            <p>
+              The same community, one side left waiting, the other reached by
+              volunteer, who had a clear task, <br />
+              a clear timeline, and a system that made sure nothing fell through
+              the cracks.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust">
+        <div class="trust-container">
+          <div class="trust-left-section">
+            <span class="who-we-are">Who We Are</span>
+            <h1>
+              Build on Trust, <br />
+              Powered by Community
+            </h1>
+
+            <img src="./assets/images/old-man-image.jpg" alt="" />
+          </div>
+          <div class="trust-right">
+            <h2>
+              With people at our core, we connect <br />
+              willing hands to the work that needs <br />
+              them the most.
+            </h2>
+            <p>
+              Volunity exists because good intentions shouldn't get lost in
+              <br />
+              disorganized sign-up sheet and unanswered messages. We give <br />
+              NGO's a real system to run their projects, and give volunteers a
+              <br />
+              clear way to see their time actually makes a difference.
+            </p>
+
+            <div class="buttons">
+              <a class="learn-more" href="#projects.html"
+                >Learn More
+                <img src="./assets/icons/icons-arrow-right.svg" alt="" />
+              </a>
+              <a class="meet-the-team" href="#signup.html">Meet the Team</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="cta-container">
+          <div class="cta-image">
+            <img src="./assets/images/volunteers-footer-photo.jpg" alt="" />
+          </div>
+
+          <div class="cta-content">
+            <h1>
+              Ready to put your time <br />
+              where it matters
+            </h1>
+
+            <p>
+              Join as a volunteer, or bring your organization onto volunity and
+              <br />
+              start managing your projects the way they desrve.
+            </p>
+
+            <a href="#signup.html"
+              >Get Started Free
+              <img src="./assets/icons/icons-arrow-right.svg" alt="" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-left">
+            <a class="footer-logo" href="index.html">
+              <img src="./assets/logo/logo.svg" alt="Volunity Logo" />
+            </a>
+
+            <p class="footer-brief">
+              Together for greater impact, <br />
+              Volunteers, NGO's and <br />
+              communities one platform.
+            </p>
+
+            <p class="footer-brief">
+              support@volunity.com Monday-Friday 8am-7pm +234 236 127 9804
+            </p>
+
+            <div class="footer-social-links">
+              <img src="./assets/icons/ic_baseline-facebook.svg" alt="" />
+              <img src="./assets/icons/mingcute_instagram-fill.svg" alt="" />
+              <img src="./assets/icons/mingcute_linkedin-fill.svg" alt="" />
+              <img
+                src="./assets/icons/streamline-logos_x-twitter-logo-block.svg"
+                alt=""
+              />
+              <img src="./assets/icons/tikok.svg" alt="" />
+              <img src="./assets/icons/mdi_youtube (1).svg" alt="" />
+            </div>
+          </div>
+
+          <div class="footer-right">
+            <div class="footer-column">
+              <h2>Platform</h2>
+              <a href="#">For Volunteers</a>
+              <a href="#">For NGO'S</a>
+              <a href="#">How it Works</a>
+              <a href="#">Success Stories</a>
+            </div>
+
+            <div class="footer-column">
+              <h2>Company</h2>
+              <a href="#">About Us</a>
+              <a href="#">Our Team</a>
+              <a href="#">Career</a>
+              <a href="#">Contact</a>
+            </div>
+
+            <div class="footer-column">
+              <h2>Resources</h2>
+              <a href="#">Help Center</a>
+              <a href="#">Community Guideline</a>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms Service</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
   </body>
 </html>

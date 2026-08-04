@@ -1,0 +1,133 @@
+.header {
+  width: 100%;
+}
+
+.header-logo {
+  height: auto;
+  width: 145px;
+}
+
+.signup-container {
+  margin: 0 auto;
+  width: 100%;
+  padding: 48px 32px;
+  gap: 26px;
+  background-color: #fff;
+}
+.signup-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 48px;
+}
+
+.signup-heading {
+  gap: 16px;
+  color: #000;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+.signup-heading h1 {
+  font-weight: 700;
+  color: #000;
+}
+
+.signup-heading p {
+  font-size: 16px;
+  color: #40493d;
+  letter-spacing: 0.25px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.signup-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+}
+
+.form-column h2 {
+  color: #0d631b;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #191c1d;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #d1d5db;
+  border: 12px;
+  font-size: 14px;
+  outline: none;
+}
+
+.form-footer {
+  display: grid;
+  grid-template-columns: span 1;
+}
+
+.interest-tag,
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.interest-tag button,
+.skills-list button {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 999px;
+  color: #191c1d;
+}
+
+.file-entry {
+  border: 2px dashed #d1d5db;
+  border-radius: 12px;
+  padding: 16px;
+  background-color: #bfcaba;
+  cursor: pointer;
+}
+
+.terms {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.terms input {
+  width: auto;
+  height: auto;
+}
+
+.create-acct-btn {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 15px;
+  background-color: #2e7d32;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}

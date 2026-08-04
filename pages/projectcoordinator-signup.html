@@ -1,0 +1,132 @@
+<!-- Project Coordinator signup -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Coordinator signup</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/projectcoordinator-signup.css" />
+  </head>
+  <body>
+    <!-- Volunity Logo -->
+
+    <header class="header-logo">
+      <img src="../assets/logo/logo.svg" alt="logo" />
+    </header>
+
+    <main>
+      <section class="signup-container">
+        <div class="signup-card">
+          <div class="signup-heading">
+            <h1>Become a Team Lead</h1>
+
+            <p>
+              Join our core leadership team. Coordinate high-impact volunteer
+              projects and empower community change agents.
+            </p>
+          </div>
+
+          <form class="coordinator-form">
+            <div class="signup-form">
+              <!-- LEFT COLUMN -->
+
+              <div class="form-column">
+                <h2>Account Basics</h2>
+
+                <div class="form-group">
+                  <label>Full Name</label>
+                  <input
+                    type="text"
+                    placeholder="Enter your full name"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label>Work Email</label>
+                  <input type="email" placeholder="Enter your email" required />
+                </div>
+
+                <div class="form-group">
+                  <label>Phone Number</label>
+                  <input type="tel" placeholder="+234 780845678" required />
+                </div>
+
+                <div class="form-group">
+                  <label>Password</label>
+                  <input type="password" required />
+                </div>
+              </div>
+
+              <!-- RIGHT COLUMN -->
+
+              <div class="form-column">
+                <h2>Leadership Profile</h2>
+
+                <div class="form-group">
+                  <label>Years of Leadership Experience</label>
+                  <input type="number" placeholder="e.g. 10" required />
+                </div>
+
+                <div class="form-group">
+                  <label>Years of Professional Experience</label>
+                  <input type="number" placeholder="e.g. 5" required />
+                </div>
+
+                <div class="form-group">
+                  <label>Specialized Certifications</label>
+
+                  <div class="interest-tags">
+                    <button>First Aid</button>
+                    <button>Project Management</button>
+                    <button>Disaster Response</button>
+                    <button>Conflict Mediation</button>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Leadership Skills</label>
+
+                  <div class="skills-list">
+                    <button>Crisis Management</button>
+                    <button>Public Speaking</button>
+                    <button>Fund Raising</button>
+                    <button>Strategic Planning</button>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Attach Certification or Resume</label>
+
+                  <input
+                    type="file"
+                    placeholder="Click to upload or drag and drop PDF or JPEG max (5.MB)"
+                    class="file-entry"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <footer class="form-footer">
+              <div class="terms">
+                <input type="checkbox" id="terms" required />
+
+                <label for="terms">
+                  I agree to the Coordinator Terms & Conditions.
+                </label>
+              </div>
+              <div register-btn>
+                <button type="submit" class="create-acct-btn">
+                  Create Coordinator Account
+                </button>
+              </div>
+            </footer>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
