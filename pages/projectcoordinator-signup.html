@@ -28,7 +28,11 @@
             </p>
           </div>
 
-          <form class="coordinator-form">
+          <form
+            id="signup-form"
+            data-role="COORDINATOR"
+            class="coordinator-form"
+          >
             <div class="signup-form">
               <!-- LEFT COLUMN -->
 
@@ -40,7 +44,19 @@
 
                 <div class="form-group">
                   <label>Full Name</label>
-                  <input type="text" placeholder="eg. John Doe" required />
+                  <input
+                    type="text"
+                    id="firstName"
+                    placeholder="eg. John"
+                    required
+                  />
+
+                  <input
+                    type="text"
+                    id="lastName"
+                    placeholder="eg. Doe"
+                    required
+                  />
                 </div>
 
                 <div class="form-group">
@@ -49,6 +65,7 @@
                     <img src="../assets/icons/oui_email.svg" alt="" />
                     <input
                       type="email"
+                      id="email"
                       placeholder="john@unityserve.org"
                       required
                     />
@@ -58,7 +75,12 @@
                 <div class="form-group">
                   <div class="input-box">
                     <img src="../assets/icons/solar_phone-linear.svg" alt="" />
-                    <input type="tel" placeholder="+234 780845678" required />
+                    <input
+                      type="tel"
+                      id="phonenumber"
+                      placeholder="+234 780845678"
+                      required
+                    />
                   </div>
                 </div>
 
@@ -66,7 +88,12 @@
                   <label>Password</label>
                   <div class="input-box">
                     <img src="../assets/icons/Container (10).svg" alt="" />
-                    <input type="password" placeholder="*******" required />
+                    <input
+                      type="password"
+                      id="password"
+                      placeholder="*******"
+                      required
+                    />
 
                     <img src="../assets/icons/Button.svg" alt="" />
                   </div>
@@ -86,7 +113,12 @@
                   <div class="input-box">
                     <img src="../assets/icons/Container.svg" alt="" />
 
-                    <input type="number" placeholder="e.g. 10" required />
+                    <input
+                      type="number"
+                      id="years-of-exp"
+                      placeholder="e.g. 10"
+                      required
+                    />
                   </div>
                 </div>
 
@@ -94,7 +126,12 @@
                   <label>Years of Professional Experience</label>
                   <div class="input-box">
                     <img src="../assets/icons/Container (10).svg" alt="" />
-                    <input type="number" placeholder="e.g. 5" required />
+                    <input
+                      type="number"
+                      id="year-of-proff-exp"
+                      placeholder="e.g. 5"
+                      required
+                    />
                   </div>
                 </div>
 
@@ -113,7 +150,9 @@
                   <label>Leadership Skills</label>
 
                   <div class="skills-list">
-                    <button>Crisis Management</button>
+                    <button type="button" id="skill-button">
+                      Crisis Management
+                    </button>
                     <button>Public Speaking</button>
                     <button>Fund Raising</button>
                     <button>Strategic Planning</button>
@@ -165,5 +204,6 @@
         </div>
       </section>
     </main>
+    <script src="../js/signup.js"></script>
   </body>
 </html>

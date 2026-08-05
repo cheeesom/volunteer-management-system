@@ -110,7 +110,6 @@
 .form-group input {
   width: 100%;
   padding: 24px 36px;
-  /* border: 1px solid #d1d5db; */
   color: #6b7280;
   background-color: #e6efe6;
   border-radius: 16px;
@@ -156,6 +155,7 @@
 
 .terms {
   display: flex;
+  /* flex-direction: column; */
   align-items: center;
   gap: 16px;
   margin-bottom: 24px;

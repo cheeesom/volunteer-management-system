@@ -30,7 +30,7 @@
               </p>
             </div>
 
-            <form class="signup-form">
+            <form id="signup-form" class="signup-form">
               <!-- NGO INFORMATION -->
 
               <div class="form-section">
@@ -43,6 +43,7 @@
                     <img src="../assets/icons/Icon-ngo.svg" alt="" />
                     <input
                       type="text"
+                      id="org-full-name"
                       placeholder="e.g. Green Earth Initiative"
                       required
                     />
@@ -54,6 +55,7 @@
                   <div class="input-box">
                     <img src="../assets/icons/ngo-id.svg" alt="" />
                     <input
+                      id="reg-ID"
                       type="text"
                       placeholder="Official RegistrationNumber"
                       required
@@ -71,7 +73,12 @@
                   <label for="Full Name">Full Name</label>
                   <div class="input-box">
                     <img src="../assets/icons/iconamoon_profile.svg" alt="" />
-                    <input type="text" placeholder="Jane Doe" required />
+                    <input
+                      type="text"
+                      id="fullname"
+                      placeholder="Jane Doe"
+                      required
+                    />
                   </div>
                 </div>
 
@@ -81,6 +88,7 @@
                     <img src="../assets/icons/oui_email.svg" alt="" />
                     <input
                       type="email"
+                      id="email"
                       placeholder="jane@organization.org"
                       required
                     />
@@ -105,5 +113,6 @@
         </div>
       </section>
     </main>
+    <script src="../js/signup.js"></script>
   </body>
 </html>
