@@ -33,30 +33,43 @@
               <!-- LEFT COLUMN -->
 
               <div class="form-column">
-                <h2>Account Basics</h2>
+                <h2>
+                  <img src="../assets/icons/Container (2).svg" alt="" /> Account
+                  Basics
+                </h2>
 
                 <div class="form-group">
                   <label>Full Name</label>
-                  <input
-                    type="text"
-                    placeholder="Enter your full name"
-                    required
-                  />
+                  <input type="text" placeholder="eg. John Doe" required />
                 </div>
 
                 <div class="form-group">
                   <label>Work Email</label>
-                  <input type="email" placeholder="Enter your email" required />
+                  <div class="input-box">
+                    <img src="../assets/icons/oui_email.svg" alt="" />
+                    <input
+                      type="email"
+                      placeholder="john@unityserve.org"
+                      required
+                    />
+                  </div>
                 </div>
 
                 <div class="form-group">
-                  <label>Phone Number</label>
-                  <input type="tel" placeholder="+234 780845678" required />
+                  <div class="input-box">
+                    <img src="../assets/icons/solar_phone-linear.svg" alt="" />
+                    <input type="tel" placeholder="+234 780845678" required />
+                  </div>
                 </div>
 
                 <div class="form-group">
                   <label>Password</label>
-                  <input type="password" required />
+                  <div class="input-box">
+                    <img src="../assets/icons/Container (10).svg" alt="" />
+                    <input type="password" placeholder="*******" required />
+
+                    <img src="../assets/icons/Button.svg" alt="" />
+                  </div>
                 </div>
               </div>
 
@@ -66,13 +79,23 @@
                 <h2>Leadership Profile</h2>
 
                 <div class="form-group">
-                  <label>Years of Leadership Experience</label>
-                  <input type="number" placeholder="e.g. 10" required />
+                  <label
+                    ><img src="../assets/icons/Container (4).svg" alt="" />
+                    Years of Leadership Experience</label
+                  >
+                  <div class="input-box">
+                    <img src="../assets/icons/Container.svg" alt="" />
+
+                    <input type="number" placeholder="e.g. 10" required />
+                  </div>
                 </div>
 
                 <div class="form-group">
                   <label>Years of Professional Experience</label>
-                  <input type="number" placeholder="e.g. 5" required />
+                  <div class="input-box">
+                    <img src="../assets/icons/Container (10).svg" alt="" />
+                    <input type="number" placeholder="e.g. 5" required />
+                  </div>
                 </div>
 
                 <div class="form-group">
@@ -98,14 +121,21 @@
                 </div>
 
                 <div class="form-group">
-                  <label>Attach Certification or Resume</label>
-
-                  <input
-                    type="file"
-                    placeholder="Click to upload or drag and drop PDF or JPEG max (5.MB)"
-                    class="file-entry"
-                    required
-                  />
+                  <label class="upload-box">
+                    Attach Certifications or Resume
+                    <div class="upload-input">
+                      <div class="input-boxx">
+                        <img src="../assets/icons/Icon (4).svg" alt="" />
+                      </div>
+                      <div input-box>
+                        <input type="file" hidden />
+                        <p>
+                          Click to upload or drag and drop <br />
+                          PDF or JPEG (max 5.MB)
+                        </p>
+                      </div>
+                    </div>
+                  </label>
                 </div>
               </div>
             </div>
@@ -116,15 +146,22 @@
 
                 <label for="terms">
                   I agree to the Coordinator Terms & Conditions.
+                  <div class="terms-p">
+                    <small>
+                      I understand that as a Team Lead, I am responsible for the
+                      safety and data privacy of my assigned volunteers as per
+                      Volunity guidelines.
+                    </small>
+                  </div>
                 </label>
-              </div>
-              <div register-btn>
-                <button type="submit" class="create-acct-btn">
-                  Create Coordinator Account
-                </button>
               </div>
             </footer>
           </form>
+          <div register-btn>
+            <button type="submit" class="create-acct-btn">
+              Create Coordinator Account
+            </button>
+          </div>
         </div>
       </section>
     </main>

@@ -3,20 +3,21 @@
 }
 
 .header-logo {
-  height: auto;
-  width: 145px;
+  margin-top: 50px;
+  padding-left: 50px;
 }
 
 .signup-container {
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2 2fr);
+  margin-top: 35px;
   width: 100%;
-  padding: 48px 32px;
-  gap: 26px;
-  background-color: #fff;
+  padding: 0 24px;
+  height: 100%;
+  gap: 32px;
 }
+
 .signup-card {
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
   padding: 48px;
 }
 
@@ -28,11 +29,15 @@
 }
 
 .signup-heading h1 {
+  display: grid;
+  gap: 52px;
   font-weight: 700;
   color: #000;
 }
 
 .signup-heading p {
+  display: grid;
+  gap: 32px;
   font-size: 16px;
   color: #40493d;
   letter-spacing: 0.25px;
@@ -44,12 +49,15 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 26px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .form-column {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding-top: 24px;
   border: 1px solid #e5e7eb;
   border-radius: 16px;
 }
@@ -61,7 +69,36 @@
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 28px;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 0 16px;
+  border: none;
+  background-color: #e6efe6;
+}
+
+.input-box input {
+  border: none;
+  outline: none;
+  padding: 14px 0;
+  background-color: #e6efe6;
+}
+
+.input-boxx {
+  width: 21px;
+  height: 34px;
+}
+
+.upload-input {
+  display: flex;
+  flex-direction: column;
 }
 
 .form-group label {
@@ -72,55 +109,67 @@
 
 .form-group input {
   width: 100%;
-  padding: 14px 16px;
-  border: 1px solid #d1d5db;
-  border: 12px;
+  padding: 24px 36px;
+  /* border: 1px solid #d1d5db; */
+  color: #6b7280;
+  background-color: #e6efe6;
+  border-radius: 16px;
   font-size: 14px;
   outline: none;
 }
 
 .form-footer {
   display: grid;
-  grid-template-columns: span 1;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
 }
 
-.interest-tag,
 .skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  border-radius: 16px;
+  color: #6b7280;
 }
 
-.interest-tag button,
-.skills-list button {
+.interest-tags button {
   border: none;
-  padding: 8px 16px;
-  border-radius: 999px;
+  padding: 16px 32px;
+  border-radius: 9px;
   color: #191c1d;
 }
 
-.file-entry {
-  border: 2px dashed #d1d5db;
+.skills-list button {
+  border: none;
+  padding: 16px 32px;
+  border-radius: 9px;
+  color: #191c1d;
+}
+
+.upload-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 48px 48px;
+  margin-top: 10px;
   border-radius: 12px;
-  padding: 16px;
-  background-color: #bfcaba;
-  cursor: pointer;
+  background-color: #e6efe6;
+  color: #191c1d;
 }
 
 .terms {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   margin-bottom: 24px;
+  color: #40493d;
 }
 
 .terms input {
-  width: auto;
-  height: auto;
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
 }
 
 .create-acct-btn {
-  width: 100%;
+  width: 50%;
   padding: 16px;
   border: none;
   border-radius: 15px;

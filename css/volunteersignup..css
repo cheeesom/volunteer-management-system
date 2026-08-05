@@ -5,17 +5,18 @@
 }
 
 .header-logo {
+  margin-top: 50px;
+  padding-left: 150px;
   height: auto;
-  width: 145px;
 }
 .signup-container {
-  /* width: 100%; */
-  margin: 0 auto;
-  padding: 48px 32px;
+  display: grid;
+  padding: 48px 120px;
   gap: 26px;
 }
 
 .signup-heading {
+  display: grid;
   gap: 16px;
 }
 
@@ -27,9 +28,9 @@
 .signup-form {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-
   gap: 26px;
-  margin-top: 32px;
+  margin-top: 30px;
+  height: 100%;
 }
 
 .form-column {
@@ -39,11 +40,10 @@
   padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 90px;
 }
 
 .form-column h2 {
-  /* font-size: ; */
   color: #2e7d32;
   font-weight: 400;
 }
@@ -59,6 +59,7 @@
   font-size: 14px;
   font-weight: 400;
   color: #000;
+  gap: 20px;
 }
 
 .form-group input,
@@ -80,17 +81,21 @@
   border-color: #2e7d32;
 }
 
+.interests-label {
+  margin-bottom: 10px;
+}
+
 .interest-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 120px;
 }
 
 .interest-tags button {
   padding: 10px 18px;
   border: 1px solid #d1d5db;
   background-color: #fff;
-  border-radius: 999px;
+  border-radius: 9px;
   cursor: pointer;
   font-size: 14px;
 }
@@ -98,7 +103,7 @@
 .skill-set {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 98px;
 }
 
 .skill-set button {
@@ -109,6 +114,24 @@
   cursor: pointer;
 }
 
+.input-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 0 16px;
+  background-color: #fff;
+}
+
+.input-box input {
+  border: none;
+  outline: none;
+  padding: 14px 0;
+  background-color: transparent;
+}
+
 .terms {
   display: flex;
   flex-direction: column;
@@ -117,13 +140,22 @@
 }
 
 .terms input {
+  border: 1px solid #c1c4ca;
   cursor: pointer;
   border-radius: 8px;
+  margin-bottom: 30px;
+  width: 20px;
+  height: 20px;
 }
 
 .terms label {
-  font-size: 14px;
   color: #000;
+  font-size: 18px;
+  font-weight: 400;
+  padding-top: 80px;
+  border: 1px solid #c1c4ca;
+  padding: 32px 56px;
+  border-radius: 16px;
 }
 
 .register-btn {
