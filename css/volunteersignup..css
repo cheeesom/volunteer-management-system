@@ -6,12 +6,12 @@
 
 .header-logo {
   margin-top: 50px;
-  padding-left: 150px;
+  padding-left: 50px;
   height: auto;
 }
 .signup-container {
   display: grid;
-  padding: 48px 120px;
+  padding: 48px 20px;
   gap: 26px;
 }
 
@@ -40,7 +40,7 @@
   padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 90px;
+  gap: 30px;
 }
 
 .form-column h2 {
@@ -88,7 +88,7 @@
 .interest-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 120px;
+  gap: 50px;
 }
 
 .interest-tags button {
@@ -103,14 +103,14 @@
 .skill-set {
   display: flex;
   flex-wrap: wrap;
-  gap: 98px;
+  gap: 38px;
 }
 
 .skill-set button {
   padding: 8px 16px;
   background-color: #f3f4f6;
   border: none;
-  border-radius: 999px;
+  border-radius: 19px;
   cursor: pointer;
 }
 
@@ -123,6 +123,10 @@
   border-radius: 12px;
   padding: 0 16px;
   background-color: #fff;
+}
+
+.confirm-password-label {
+  padding-top: 30px;
 }
 
 .input-box input {
@@ -152,9 +156,9 @@
   color: #000;
   font-size: 18px;
   font-weight: 400;
-  padding-top: 80px;
+  padding-top: 40px;
   border: 1px solid #c1c4ca;
-  padding: 32px 56px;
+  padding: 22px 26px;
   border-radius: 16px;
 }
 

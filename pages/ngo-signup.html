@@ -30,12 +30,11 @@
               </p>
             </div>
 
-            <form class="signup-form">
+            <form id="signup-form" class="signup-form">
               <!-- NGO INFORMATION -->
 
               <div class="form-section">
                 <h2>NGO Information</h2>
-                <img src="" alt="" />
 
                 <div class="form-group">
                   <label for="organization-name">Organization Name</label>
@@ -43,6 +42,7 @@
                     <img src="../assets/icons/Icon-ngo.svg" alt="" />
                     <input
                       type="text"
+                      id="org-full-name"
                       placeholder="e.g. Green Earth Initiative"
                       required
                     />
@@ -54,6 +54,7 @@
                   <div class="input-box">
                     <img src="../assets/icons/ngo-id.svg" alt="" />
                     <input
+                      id="reg-ID"
                       type="text"
                       placeholder="Official RegistrationNumber"
                       required
@@ -71,7 +72,12 @@
                   <label for="Full Name">Full Name</label>
                   <div class="input-box">
                     <img src="../assets/icons/iconamoon_profile.svg" alt="" />
-                    <input type="text" placeholder="Jane Doe" required />
+                    <input
+                      type="text"
+                      id="fullname"
+                      placeholder="Jane Doe"
+                      required
+                    />
                   </div>
                 </div>
 
@@ -81,9 +87,36 @@
                     <img src="../assets/icons/oui_email.svg" alt="" />
                     <input
                       type="email"
+                      id="email"
                       placeholder="jane@organization.org"
                       required
                     />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Password</label>
+                  <div class="input-box">
+                    <input
+                      class="password-input"
+                      type="password"
+                      id="password"
+                      placeholder="Enter your password"
+                      required
+                    />
+                    <img src="../assets/icons/Button.svg" alt="" />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Confirm Password</label>
+                  <div class="input-box">
+                    <input
+                      type="password"
+                      id="confirm-password"
+                      placeholder="Confirm your password"
+                      required
+                    />
+                    <img src="../assets/icons/Button.svg" alt="" />
                   </div>
                 </div>
               </div>
@@ -96,14 +129,15 @@
 
           <!-- Right Side -->
 
-          <div class="signup-image">
+          <!-- <div class="signup-image">
             <img
               src="../assets/images/login-welcome-back-img.jpg"
               alt="Volunteer smiling outdoors"
             />
-          </div>
+          </div> -->
         </div>
       </section>
     </main>
+    <script src="../js/signup.js"></script>
   </body>
 </html>

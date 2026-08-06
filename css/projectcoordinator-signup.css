@@ -110,7 +110,6 @@
 .form-group input {
   width: 100%;
   padding: 24px 36px;
-  /* border: 1px solid #d1d5db; */
   color: #6b7280;
   background-color: #e6efe6;
   border-radius: 16px;
@@ -131,14 +130,14 @@
 
 .interest-tags button {
   border: none;
-  padding: 16px 32px;
+  padding: 26px 32px;
   border-radius: 9px;
   color: #191c1d;
 }
 
 .skills-list button {
   border: none;
-  padding: 16px 32px;
+  padding: 26px 32px;
   border-radius: 9px;
   color: #191c1d;
 }
@@ -162,10 +161,14 @@
   color: #40493d;
 }
 
+.terms label {
+  padding-top: 26px;
+}
+
 .terms input {
   width: 30px;
   height: 30px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .create-acct-btn {
