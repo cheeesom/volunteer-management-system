@@ -366,6 +366,11 @@
   height: 14px;
 }
 
+.page-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
 .badge--pending {
   background: #fff3e0;
   color: #ef6c00;
