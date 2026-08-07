@@ -1,0 +1,63 @@
+<!doctype html>
+<!--
+  LAYOUT TEMPLATE — copy this shell for any authenticated page.
+  1. Keep layout.css + layout.js
+  2. Set body data-nav to match the sidebar link (e.g. "tasks")
+  3. Change topbar-title
+  4. Replace only the .page-content inner markup
+  5. Add a page-specific CSS file if needed
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Title — Volunity</title>
+    <link rel="stylesheet" href="../css/layout.css" />
+  </head>
+  <body data-nav="dashboard">
+    <div class="app-shell">
+      <div class="sidebar-overlay" aria-hidden="true"></div>
+      <aside class="sidebar" aria-label="Main navigation">
+        <a class="sidebar-brand" href="dashboard.html">
+          <img src="../assets/logo/logo.svg" alt="" />
+          <span class="sidebar-brand-text">Volunity</span>
+        </a>
+        <nav class="sidebar-nav">
+          <a class="sidebar-link" href="dashboard.html" data-nav="dashboard">Dashboard</a>
+          <a class="sidebar-link" href="profile.html" data-nav="profile">Profile</a>
+          <a class="sidebar-link" href="explore.html" data-nav="explore">Explore</a>
+          <a class="sidebar-link" href="tasks.html" data-nav="tasks">Tasks</a>
+          <a class="sidebar-link" href="checkin.html" data-nav="checkin">Check In</a>
+          <a class="sidebar-link" href="notifications.html" data-nav="notifications">Notifications</a>
+          <a class="sidebar-link" href="certificates.html" data-nav="certificates">Certificates</a>
+        </nav>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-footer">
+          <a class="sidebar-link" href="#">Settings</a>
+          <a class="sidebar-link" href="#">Help &amp; Support</a>
+          <a class="sidebar-link is-danger" href="login.html">Logout</a>
+        </div>
+      </aside>
+      <div class="app-main">
+        <header class="topbar">
+          <div class="topbar-left">
+            <button class="topbar-toggle" type="button" data-sidebar-toggle aria-label="Toggle navigation">
+              <span></span><span></span><span></span>
+            </button>
+            <h1 class="topbar-title">Page Title</h1>
+          </div>
+          <div class="topbar-right">
+            <a class="topbar-icon-btn" href="notifications.html" aria-label="Notifications">
+              <span class="topbar-badge">1</span>
+            </a>
+            <a class="topbar-profile" href="profile.html">Profile</a>
+          </div>
+        </header>
+        <div class="page-content">
+          <!-- YOUR PAGE CONTENT GOES HERE -->
+        </div>
+      </div>
+    </div>
+    <script src="../js/layout.js"></script>
+  </body>
+</html>

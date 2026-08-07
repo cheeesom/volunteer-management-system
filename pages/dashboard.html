@@ -3,151 +3,81 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="../css/dashboard.css" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <title>Dashboard — Volunity</title>
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/volunteer-dashboard.css" />
   </head>
-  <body>
-    <div class="app">
-      <!-- Sidebar -->
-      <aside class="sidebar">
-        <img src="./image/logo.png" alt="" class="brand" />
+  <body data-nav="dashboard">
+    <div class="app-shell">
+      <div class="sidebar-overlay" aria-hidden="true"></div>
 
-        <a class="nav-item active" href="#">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <rect x="3" y="3" width="7" height="7" rx="1.5" />
-            <rect x="14" y="3" width="7" height="7" rx="1.5" />
-            <rect x="3" y="14" width="7" height="7" rx="1.5" />
-            <rect x="14" y="14" width="7" height="7" rx="1.5" />
-          </svg>
-          Dashboard
-        </a>
-        <a class="nav-item" href="#">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" />
-          </svg>
-          Opportunity
-        </a>
-        <a class="nav-item" href="#">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <circle cx="9" cy="8" r="3.2" />
-            <path d="M2.5 20c1-4 4-6 6.5-6s5.5 2 6.5 6" />
-            <circle cx="18" cy="9" r="2.6" />
-            <path d="M15.5 20c.7-2.8 2.3-4.5 4-4.9" />
-          </svg>
-          Volunteers
-        </a>
-        <a class="nav-item" href="#">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path d="M6 3h9l3 3v15H6z" />
-            <path d="M9 11h6M9 15h6" />
-          </svg>
-          Tasks
-        </a>
-        <a class="nav-item" href="#">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <rect x="3" y="4" width="18" height="17" rx="2" />
-            <path d="M3 9h18M8 2v4M16 2v4" />
-          </svg>
-          Attendance
-        </a>
-        <a class="nav-item" href="#">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path d="M6 2h9l3 3v17H6z" />
-            <path d="M9 8h6M9 12h6M9 16h4" />
-          </svg>
-          Reports
-        </a>
-        <a class="nav-item" href="#">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <circle cx="12" cy="10" r="4" />
-            <path d="M9 14l-2 7 5-3 5 3-2-7" />
-          </svg>
-          Certificate
-        </a>
-        <a class="nav-item" href="#">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              d="M12 21s-7-4.6-9.5-9C.6 8.4 2.4 4.5 6 4.1 8.4 3.8 10.6 5 12 7c1.4-2 3.6-3.2 6-2.9 3.6.4 5.4 4.3 3.5 7.9C19 16.4 12 21 12 21z"
-            />
-          </svg>
-          Donations
-        </a>
-        <a class="nav-item" href="#">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <circle cx="12" cy="8" r="3.5" />
-            <path d="M4.5 20c1.2-4.4 4.2-6.6 7.5-6.6s6.3 2.2 7.5 6.6" />
-          </svg>
-          Users
-        </a>
-        <a class="nav-item" href="#">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              d="M21 11.5a8.5 8.5 0 1 1-4-7.2L21 3l-1 4.6a8.4 8.4 0 0 1 1 3.9z"
-            />
-          </svg>
-          Message
+      <!-- ========== Reusable Sidebar ========== -->
+      <aside class="sidebar" aria-label="Main navigation">
+        <a class="sidebar-brand" href="dashboard.html">
+          <img src="../assets/logo/logo.svg" alt="" />
+          <span class="sidebar-brand-text">Volunity</span>
         </a>
 
-        <div class="nav-divider"></div>
-        <div class="nav-bottom">
-          <a class="nav-item" href="#">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
+        <nav class="sidebar-nav">
+          <a class="sidebar-link is-active" href="dashboard.html" data-nav="dashboard">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7" rx="1.5" />
+              <rect x="14" y="3" width="7" height="7" rx="1.5" />
+              <rect x="3" y="14" width="7" height="7" rx="1.5" />
+              <rect x="14" y="14" width="7" height="7" rx="1.5" />
+            </svg>
+            Dashboard
+          </a>
+          <a class="sidebar-link" href="profile.html" data-nav="profile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="8" r="3.5" />
+              <path d="M5 20c1.2-4 4-6 7-6s5.8 2 7 6" />
+            </svg>
+            Profile
+          </a>
+          <a class="sidebar-link" href="explore.html" data-nav="explore">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 3v3M12 18v3M3 12h3M18 12h3" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+            Explore
+          </a>
+          <a class="sidebar-link" href="tasks.html" data-nav="tasks">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M9 11l2 2 4-4" />
+              <rect x="4" y="3" width="16" height="18" rx="2" />
+            </svg>
+            Tasks
+          </a>
+          <a class="sidebar-link" href="checkin.html" data-nav="checkin">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+            Check In
+          </a>
+          <a class="sidebar-link" href="notifications.html" data-nav="notifications">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+              <path d="M13.7 21a2 2 0 0 1-3.4 0" />
+            </svg>
+            Notifications
+          </a>
+          <a class="sidebar-link" href="certificates.html" data-nav="certificates">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="10" r="4" />
+              <path d="M9 14l-2 7 5-3 5 3-2-7" />
+            </svg>
+            Certificates
+          </a>
+        </nav>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-footer">
+          <a class="sidebar-link" href="#" data-nav="settings">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <circle cx="12" cy="12" r="3" />
               <path
                 d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1.1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"
@@ -155,26 +85,16 @@
             </svg>
             Settings
           </a>
-          <a class="nav-item" href="#">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
+          <a class="sidebar-link" href="#" data-nav="help">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <circle cx="12" cy="12" r="9" />
               <path d="M9.5 9a2.5 2.5 0 1 1 3.7 2.2c-.9.5-1.2 1-1.2 1.8" />
               <path d="M12 17h.01" />
             </svg>
             Help &amp; Support
           </a>
-          <a class="nav-item danger" href="#">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
+          <a class="sidebar-link is-danger" href="login.html" data-nav="logout">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
               <path d="M16 17l5-5-5-5" />
               <path d="M21 12H9" />
@@ -184,342 +104,509 @@
         </div>
       </aside>
 
-      <!-- Main -->
-      <main class="main">
-        <div class="toolbar">
-          <div class="toolbar-left">
-            <div class="hamburger"><span></span><span></span><span></span></div>
-            <h1 class="toolbar-title">Dashboard</h1>
+      <!-- ========== Main ========== -->
+      <div class="app-main">
+        <!-- Reusable Topbar -->
+        <header class="topbar">
+          <div class="topbar-left">
+            <button
+              class="topbar-toggle"
+              type="button"
+              data-sidebar-toggle
+              aria-label="Toggle navigation"
+            >
+              <span></span><span></span><span></span>
+            </button>
+            <h1 class="topbar-title">Dashboard</h1>
           </div>
-          <div class="toolbar-right">
-            <div class="bell-wrap">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
+
+          <div class="topbar-right">
+            <a class="topbar-icon-btn" href="notifications.html" aria-label="Notifications">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
                 <path d="M13.7 21a2 2 0 0 1-3.4 0" />
               </svg>
-              <span class="bell-dot"></span>
-            </div>
-            <div class="profile">
-              <div class="avatar">BS</div>
-              <div class="profile-text">
-                <div class="profile-name">Bukayo Saka</div>
-                <div class="profile-role">NGO Administrator</div>
-              </div>
-              <svg
-                class="chevron"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
+              <span class="topbar-badge">1</span>
+            </a>
+
+            <a class="topbar-profile" href="profile.html" aria-label="Account menu">
+              <img
+                class="topbar-avatar"
+                src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=96&h=96&fit=crop&crop=faces"
+                alt=""
+              />
+              <span class="topbar-user">
+                <span class="topbar-user-name">Amara Okafor</span>
+                <span class="topbar-user-role">Volunteer</span>
+              </span>
+              <svg class="topbar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M6 9l6 6 6-6" />
               </svg>
-            </div>
+            </a>
           </div>
-        </div>
+        </header>
 
-        <div class="welcome-banner">
-          <div>
-            <h2 class="welcome-title">Welcome back, Bukayo!</h2>
-            <p class="welcome-sub">
-              Here's what's happening with your organization today.
+        <!-- Page content (swap this block on other pages) -->
+        <div class="page-content">
+          <section class="dash-greeting">
+            <h2>Welcome back, Amara! 👋</h2>
+            <p>
+              Your time and skills create real change. Thank you for being part
+              of Volunity.
             </p>
-          </div>
-          <div class="date-pill">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <rect x="3" y="4" width="18" height="17" rx="2" />
-              <path d="M3 9h18M8 2v4M16 2v4" />
-            </svg>
-            May 1 – May 31, 2026
-            <svg
-              class="chevron"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </div>
-        </div>
+          </section>
 
-        <!-- Stat cards -->
-        <div class="stat-grid">
-          <div class="stat-card">
-            <div class="stat-top">
-              <div class="stat-icon" style="background: #e7f3ef">👥</div>
-              <span class="stat-label">Total Volunteers</span>
-            </div>
-            <p class="stat-value">245</p>
-            <span class="stat-delta">+12 this month</span>
-          </div>
-          <div class="stat-card">
-            <div class="stat-top">
-              <div class="stat-icon" style="background: #e6f0fb">📁</div>
-              <span class="stat-label">Active Projects</span>
-            </div>
-            <p class="stat-value">18</p>
-            <span class="stat-delta">+3 this month</span>
-          </div>
-          <div class="stat-card">
-            <div class="stat-top">
-              <div class="stat-icon" style="background: #fdeaec">📝</div>
-              <span class="stat-label">Task Completed</span>
-            </div>
-            <p class="stat-value">128</p>
-            <span class="stat-delta">+18 this month</span>
-          </div>
-          <div class="stat-card">
-            <div class="stat-top">
-              <div class="stat-icon" style="background: #fdeaf2">⏱️</div>
-              <span class="stat-label">Volunteer Hours</span>
-            </div>
-            <p class="stat-value">1,230</p>
-            <span class="stat-delta">+220 this month</span>
-          </div>
-        </div>
-
-        <!-- Progress + Activity -->
-        <div class="content-grid">
-          <div class="panel">
-            <div class="panel-head">
-              <h3 class="panel-title">Project Progress Overview</h3>
-              <span class="filter-pill">All Projects ▾</span>
-            </div>
-            <canvas id="progressChart" height="200"></canvas>
-          </div>
-
-          <div class="panel">
-            <div class="panel-head">
-              <h3 class="panel-title">Recent Activities</h3>
-            </div>
-            <ul class="activity-list" id="activityList"></ul>
-            <a class="view-all" href="#">View all activities →</a>
-          </div>
-        </div>
-
-        <!-- Tasks + Contributors -->
-        <div class="bottom-grid">
-          <div class="panel">
-            <div class="panel-head">
-              <h3 class="panel-title">Tasks Summary</h3>
-            </div>
-            <div class="donut-wrap">
-              <div class="donut-canvas-box">
-                <canvas id="taskDonut"></canvas>
-                <div class="donut-center">
-                  <div class="donut-total">128</div>
-                  <div class="donut-label">Total Tasks</div>
-                </div>
+          <!-- Quick stats -->
+          <section class="stat-row" aria-label="Quick stats">
+            <article class="stat-card">
+              <div class="stat-card__icon stat-card__icon--green">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 11l2 2 4-4" />
+                  <rect x="4" y="3" width="16" height="18" rx="2" />
+                </svg>
               </div>
-              <div class="legend" id="taskLegend"></div>
-            </div>
-          </div>
+              <p class="stat-card__value">03</p>
+              <p class="stat-card__label">My Assignment</p>
+              <p class="stat-card__meta">2 In Progress</p>
+            </article>
 
-          <div class="panel">
-            <div class="panel-head">
-              <h3 class="panel-title">Top Volunteer Contributors</h3>
+            <article class="stat-card">
+              <div class="stat-card__icon stat-card__icon--blue">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="17" rx="2" />
+                  <path d="M3 9h18M8 2v4M16 2v4" />
+                </svg>
+              </div>
+              <p class="stat-card__value">02</p>
+              <p class="stat-card__label">Upcoming Events</p>
+              <p class="stat-card__meta">This week</p>
+            </article>
+
+            <article class="stat-card">
+              <div class="stat-card__icon stat-card__icon--amber">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 2" />
+                </svg>
+              </div>
+              <p class="stat-card__value">18</p>
+              <p class="stat-card__label">Hours Contributed</p>
+              <p class="stat-card__meta">This Month</p>
+            </article>
+
+            <article class="stat-card">
+              <div class="stat-card__icon stat-card__icon--rose">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" />
+                </svg>
+              </div>
+              <p class="stat-card__value">120</p>
+              <p class="stat-card__label">Impact Points</p>
+              <p class="stat-card__meta">Total Earned</p>
+            </article>
+          </section>
+
+          <div class="dash-grid">
+            <!-- Left column -->
+            <div class="dash-col">
+              <!-- Assignments -->
+              <section class="card">
+                <div class="card-header">
+                  <div>
+                    <h3 class="card-title">Announcements</h3>
+                  </div>
+                  <a class="card-link" href="tasks.html">View All</a>
+                </div>
+
+                <ul class="assignment-list">
+                  <li class="assignment-item">
+                    <img
+                      class="assignment-thumb"
+                      src="https://images.unsplash.com/photo-1618477461853-cf6ed80faba5?w=128&h=128&fit=crop"
+                      alt=""
+                    />
+                    <div class="assignment-body">
+                      <h4 class="assignment-title">Community Clean-up Initiative</h4>
+                      <div class="assignment-meta">
+                        <span>
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 21s-7-4.6-9.5-9C.6 8.4 2.4 4.5 6 4.1 8.4 3.8 10.6 5 12 7c1.4-2 3.6-3.2 6-2.9 3.6.4 5.4 4.3 3.5 7.9C19 16.4 12 21 12 21z" />
+                          </svg>
+                          Lagos, Nigeria
+                        </span>
+                        <span>
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="17" rx="2" />
+                            <path d="M3 9h18" />
+                          </svg>
+                          Due: May 28
+                        </span>
+                        <span>
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M12 7v5l3 2" />
+                          </svg>
+                          2 hrs
+                        </span>
+                      </div>
+                    </div>
+                    <span class="badge badge--success assignment-status">In Progress</span>
+                  </li>
+
+                  <li class="assignment-item">
+                    <img
+                      class="assignment-thumb"
+                      src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=128&h=128&fit=crop"
+                      alt=""
+                    />
+                    <div class="assignment-body">
+                      <h4 class="assignment-title">Youth Mentorship Workshop</h4>
+                      <div class="assignment-meta">
+                        <span>
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 21s-7-4.6-9.5-9C.6 8.4 2.4 4.5 6 4.1 8.4 3.8 10.6 5 12 7c1.4-2 3.6-3.2 6-2.9 3.6.4 5.4 4.3 3.5 7.9C19 16.4 12 21 12 21z" />
+                          </svg>
+                          Abuja, Nigeria
+                        </span>
+                        <span>
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="17" rx="2" />
+                            <path d="M3 9h18" />
+                          </svg>
+                          Due: Jun 02
+                        </span>
+                        <span>
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M12 7v5l3 2" />
+                          </svg>
+                          3 hrs
+                        </span>
+                      </div>
+                    </div>
+                    <span class="badge badge--info assignment-status">Upcoming</span>
+                  </li>
+
+                  <li class="assignment-item">
+                    <img
+                      class="assignment-thumb"
+                      src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=128&h=128&fit=crop"
+                      alt=""
+                    />
+                    <div class="assignment-body">
+                      <h4 class="assignment-title">Food Bank Distribution Drive</h4>
+                      <div class="assignment-meta">
+                        <span>
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 21s-7-4.6-9.5-9C.6 8.4 2.4 4.5 6 4.1 8.4 3.8 10.6 5 12 7c1.4-2 3.6-3.2 6-2.9 3.6.4 5.4 4.3 3.5 7.9C19 16.4 12 21 12 21z" />
+                          </svg>
+                          Ibadan, Nigeria
+                        </span>
+                        <span>
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="17" rx="2" />
+                            <path d="M3 9h18" />
+                          </svg>
+                          Due: Jun 10
+                        </span>
+                        <span>
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M12 7v5l3 2" />
+                          </svg>
+                          4 hrs
+                        </span>
+                      </div>
+                    </div>
+                    <span class="badge badge--neutral assignment-status">Not Started</span>
+                  </li>
+                </ul>
+              </section>
+
+              <!-- Impact summary -->
+              <section class="card impact-card">
+                <div class="card-header">
+                  <div>
+                    <h3 class="card-title">My Impact Summary</h3>
+                    <p class="card-subtitle">
+                      Track your contributions and see the difference you're making.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="impact-body">
+                  <div class="impact-ring" aria-label="18 hours contributed">
+                    <svg viewBox="0 0 120 120">
+                      <circle class="impact-ring__track" cx="60" cy="60" r="50" />
+                      <circle class="impact-ring__progress" cx="60" cy="60" r="50" />
+                    </svg>
+                    <div class="impact-ring__label">
+                      <span class="impact-ring__hours">18</span>
+                      <span class="impact-ring__caption">Hours</span>
+                    </div>
+                  </div>
+
+                  <div class="impact-stats">
+                    <div class="impact-stat">
+                      <div class="impact-stat__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M3 7h18v12H3z" />
+                          <path d="M3 11h18M8 7V5h8v2" />
+                        </svg>
+                      </div>
+                      <p class="impact-stat__value">4</p>
+                      <p class="impact-stat__label">Project Joined</p>
+                    </div>
+                    <div class="impact-stat">
+                      <div class="impact-stat__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M9 11l2 2 4-4" />
+                          <rect x="4" y="3" width="16" height="18" rx="2" />
+                        </svg>
+                      </div>
+                      <p class="impact-stat__value">7</p>
+                      <p class="impact-stat__label">Tasks Completed</p>
+                    </div>
+                    <div class="impact-stat">
+                      <div class="impact-stat__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <circle cx="9" cy="8" r="3" />
+                          <path d="M3 20c1-3.5 3.5-5.5 6-5.5S14 16.5 15 20" />
+                          <circle cx="17" cy="9" r="2.5" />
+                          <path d="M14.5 20c.6-2.5 2-4 3.5-4.5" />
+                        </svg>
+                      </div>
+                      <p class="impact-stat__value">2</p>
+                      <p class="impact-stat__label">Communities Impacted</p>
+                    </div>
+                    <div class="impact-stat">
+                      <div class="impact-stat__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" />
+                        </svg>
+                      </div>
+                      <p class="impact-stat__value">120</p>
+                      <p class="impact-stat__label">Impact Points</p>
+                    </div>
+                  </div>
+
+                  <div class="impact-art" aria-hidden="true">
+                    <svg viewBox="0 0 120 120" fill="none">
+                      <path
+                        d="M30 70c0-12 8-22 20-26 4-10 14-16 25-14 12 2 20 12 20 24 0 4-1 8-3 11 8 4 13 12 13 21 0 14-12 24-28 24H45c-14 0-25-10-25-24 0-8 4-15 10-20z"
+                        fill="currentColor"
+                        opacity="0.12"
+                      />
+                      <path
+                        d="M48 78c8-14 16-20 24-20s16 6 24 20"
+                        stroke="currentColor"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        opacity="0.55"
+                      />
+                      <path
+                        d="M60 52c0-6 4-10 10-10s10 4 10 10c0 8-10 14-10 14s-10-6-10-14z"
+                        fill="currentColor"
+                        opacity="0.45"
+                      />
+                      <path
+                        d="M40 62c4-8 10-12 16-12"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        opacity="0.4"
+                      />
+                      <path
+                        d="M96 62c-4-8-10-12-16-12"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        opacity="0.4"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </section>
             </div>
-            <ul class="contrib-list" id="contribList"></ul>
-            <a class="view-all" href="#">View all volunteers →</a>
+
+            <!-- Right column -->
+            <div class="dash-col">
+              <!-- Text announcements -->
+              <section class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Announcements</h3>
+                </div>
+                <ul class="announce-list">
+                  <li class="announce-item">
+                    <div class="announce-icon announce-icon--green">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 11v2a2 2 0 0 0 2 2h1l6 4V5L6 9H5a2 2 0 0 0-2 2z" />
+                        <path d="M16 8.5a4.5 4.5 0 0 1 0 7" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 class="announce-title">New Volunteer Orientation</h4>
+                      <p class="announce-text">
+                        Join us this Saturday for onboarding and community tips.
+                      </p>
+                      <p class="announce-date">May 20, 2026</p>
+                    </div>
+                  </li>
+                  <li class="announce-item">
+                    <div class="announce-icon announce-icon--amber">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4z" />
+                        <path d="M17 8h2a2 2 0 0 1 0 4h-2M7 8H5a2 2 0 0 0 0 4h2" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 class="announce-title">Volunteer of the Month</h4>
+                      <p class="announce-text">
+                        Congratulations to everyone who hit 20+ hours this month!
+                      </p>
+                      <p class="announce-date">May 18, 2026</p>
+                    </div>
+                  </li>
+                  <li class="announce-item">
+                    <div class="announce-icon announce-icon--blue">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 11l2 2 4-4" />
+                        <rect x="4" y="3" width="16" height="18" rx="2" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 class="announce-title">Task Deadline Reminder</h4>
+                      <p class="announce-text">
+                        Two of your assignments are due before the end of May.
+                      </p>
+                      <p class="announce-date">May 15, 2026</p>
+                    </div>
+                  </li>
+                </ul>
+              </section>
+
+              <!-- Check in -->
+              <section class="card">
+                <div class="card-header">
+                  <div>
+                    <h3 class="card-title">Check In</h3>
+                    <p class="card-subtitle">Let us know you're at the location.</p>
+                  </div>
+                </div>
+                <div class="checkin-status">
+                  You haven't checked in today. Check in when you arrive.
+                </div>
+                <div class="checkin-actions">
+                  <button class="btn btn--primary" type="button" onclick="location.href='checkin.html'">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="3" y="3" width="7" height="7" rx="1" />
+                      <rect x="14" y="3" width="7" height="7" rx="1" />
+                      <rect x="3" y="14" width="7" height="7" rx="1" />
+                      <path d="M14 14h3v3h-3zM20 14v6M14 20h3" />
+                    </svg>
+                    Check In Now
+                  </button>
+                  <button class="btn btn--outline" type="button">
+                    View Check-in History
+                  </button>
+                </div>
+              </section>
+
+              <!-- Upcoming events -->
+              <section class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Upcoming Events</h3>
+                  <a class="card-link" href="explore.html">View Calendar</a>
+                </div>
+                <ul class="event-list">
+                  <li class="event-item">
+                    <div class="event-date">
+                      <span class="event-date__month">May</span>
+                      <span class="event-date__day">25</span>
+                    </div>
+                    <div>
+                      <h4 class="event-title">Beach Clean-up Day</h4>
+                      <p class="event-meta">
+                        <span>
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 21s-7-4.6-9.5-9C.6 8.4 2.4 4.5 6 4.1 8.4 3.8 10.6 5 12 7c1.4-2 3.6-3.2 6-2.9 3.6.4 5.4 4.3 3.5 7.9C19 16.4 12 21 12 21z" />
+                          </svg>
+                          Lekki Beach
+                        </span>
+                        <span>
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M12 7v5l3 2" />
+                          </svg>
+                          9:00 AM – 12:00 PM
+                        </span>
+                      </p>
+                    </div>
+                  </li>
+                  <li class="event-item">
+                    <div class="event-date">
+                      <span class="event-date__month">May</span>
+                      <span class="event-date__day">28</span>
+                    </div>
+                    <div>
+                      <h4 class="event-title">Coding for Kids Workshop</h4>
+                      <p class="event-meta">
+                        <span>
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 21s-7-4.6-9.5-9C.6 8.4 2.4 4.5 6 4.1 8.4 3.8 10.6 5 12 7c1.4-2 3.6-3.2 6-2.9 3.6.4 5.4 4.3 3.5 7.9C19 16.4 12 21 12 21z" />
+                          </svg>
+                          Yaba Tech Hub
+                        </span>
+                        <span>
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M12 7v5l3 2" />
+                          </svg>
+                          2:00 PM – 5:00 PM
+                        </span>
+                      </p>
+                    </div>
+                  </li>
+                  <li class="event-item">
+                    <div class="event-date">
+                      <span class="event-date__month">Jun</span>
+                      <span class="event-date__day">02</span>
+                    </div>
+                    <div>
+                      <h4 class="event-title">Tree Planting Drive</h4>
+                      <p class="event-meta">
+                        <span>
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 21s-7-4.6-9.5-9C.6 8.4 2.4 4.5 6 4.1 8.4 3.8 10.6 5 12 7c1.4-2 3.6-3.2 6-2.9 3.6.4 5.4 4.3 3.5 7.9C19 16.4 12 21 12 21z" />
+                          </svg>
+                          Ikeja Park
+                        </span>
+                        <span>
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M12 7v5l3 2" />
+                          </svg>
+                          8:00 AM – 11:00 AM
+                        </span>
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+                <div class="events-footer">
+                  <a href="explore.html">
+                    See all upcoming events
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M5 12h14M13 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+              </section>
+            </div>
           </div>
         </div>
-      </main>
+      </div>
     </div>
 
-    <script>
-      // ---- Project Progress Bar Chart ----
-      const progressCtx = document.getElementById("progressChart");
-      new Chart(progressCtx, {
-        type: "bar",
-        data: {
-          labels: [
-            "Community Clean up",
-            "Youth Education Program",
-            "Food Donation Drive",
-            "Tree Planting Initiative",
-            "Health Awareness Campaign",
-          ],
-          datasets: [
-            {
-              data: [55, 80, 70, 40, 30],
-              backgroundColor: "#2E7D32",
-              borderRadius: 6,
-              maxBarThickness: 46,
-            },
-          ],
-        },
-        options: {
-          responsive: true,
-          plugins: {
-            legend: { display: false },
-            tooltip: {
-              callbacks: { label: (c) => c.parsed.y + "%" },
-            },
-          },
-          scales: {
-            y: {
-              beginAtZero: true,
-              max: 100,
-              ticks: { stepSize: 25, callback: (v) => v + "%" },
-              grid: { color: "#eef2f0" },
-            },
-            x: { grid: { display: false } },
-          },
-        },
-      });
-
-      // ---- Recent Activities ----
-      const activities = [
-        {
-          icon: "📝",
-          bg: "#fdeaec",
-          text: "Jane Doe completed a task",
-          sub: "Community Cleanup",
-          time: "2m ago",
-        },
-        {
-          icon: "👥",
-          bg: "#e7f3ef",
-          text: "New volunteer registered",
-          sub: "John Watson",
-          time: "5m ago",
-        },
-        {
-          icon: "📁",
-          bg: "#e6f0fb",
-          text: "Food Donation Drive milestone completed",
-          sub: "",
-          time: "8m ago",
-        },
-        {
-          icon: "🗓️",
-          bg: "#fdeaf2",
-          text: "25 volunteers marked attendance",
-          sub: "Youth Education Program",
-          time: "15m ago",
-        },
-        {
-          icon: "📁",
-          bg: "#e6f0fb",
-          text: "New project added",
-          sub: "Health Awareness Campaign",
-          time: "20m ago",
-        },
-        {
-          icon: "👥",
-          bg: "#e7f3ef",
-          text: "New volunteer registered",
-          sub: "Sarah Williams",
-          time: "25m ago",
-        },
-        {
-          icon: "📝",
-          bg: "#fdeaec",
-          text: "Michael John completed a task",
-          sub: "Community Cleanup",
-          time: "32m ago",
-        },
-        {
-          icon: "📁",
-          bg: "#e6f0fb",
-          text: "Food Donation Drive milestone completed",
-          sub: "",
-          time: "40m ago",
-        },
-        {
-          icon: "🗓️",
-          bg: "#fdeaf2",
-          text: "40 volunteers marked attendance",
-          sub: "Tree Planting Initiative",
-          time: "50m ago",
-        },
-      ];
-      const activityList = document.getElementById("activityList");
-      activities.forEach((a) => {
-        const li = document.createElement("li");
-        li.className = "activity-item";
-        li.innerHTML = `
-      <div class="activity-dot" style="background:${a.bg};">${a.icon}</div>
-      <div>
-        <div class="activity-text">${a.text}</div>
-        ${a.sub ? `<div class="activity-sub">${a.sub}</div>` : ""}
-      </div>
-      <div class="activity-time">${a.time}</div>
-    `;
-        activityList.appendChild(li);
-      });
-
-      // ---- Tasks Donut ----
-      const taskData = [
-        { label: "Completed", value: 56, color: "#f0b98a" },
-        { label: "In Progress", value: 46, color: "#5aa7d6" },
-        { label: "To Do", value: 20, color: "#dbe6e2" },
-        { label: "Overdue", value: 6, color: "#f2a4b0" },
-      ];
-      new Chart(document.getElementById("taskDonut"), {
-        type: "doughnut",
-        data: {
-          labels: taskData.map((d) => d.label),
-          datasets: [
-            {
-              data: taskData.map((d) => d.value),
-              backgroundColor: taskData.map((d) => d.color),
-              borderWidth: 0,
-            },
-          ],
-        },
-        options: {
-          cutout: "72%",
-          plugins: { legend: { display: false } },
-        },
-      });
-
-      const legend = document.getElementById("taskLegend");
-      const total = taskData.reduce((a, b) => a + b.value, 0);
-      taskData.forEach((d) => {
-        const pct = Math.round((d.value / total) * 100);
-        const row = document.createElement("div");
-        row.className = "legend-row";
-        row.innerHTML = `<span class="legend-dot" style="background:${d.color}"></span>${d.label}
-      <span class="legend-count">${d.value} (${pct}%)</span>`;
-        legend.appendChild(row);
-      });
-
-      // ---- Top Contributors ----
-      const contributors = [
-        { name: "Jane Doe", hours: "120hrs", color: "#1e6f5c" },
-        { name: "Michael John", hours: "98hrs", color: "#5aa7d6" },
-        { name: "Sarah Williams", hours: "86hrs", color: "#f2a4b0" },
-        { name: "Dave Brown", hours: "75hrs", color: "#f0b98a" },
-        { name: "Emily Johnson", hours: "66hrs", color: "#0f3d33" },
-      ];
-      const contribList = document.getElementById("contribList");
-      contributors.forEach((c, i) => {
-        const initials = c.name
-          .split(" ")
-          .map((n) => n[0])
-          .join("");
-        const li = document.createElement("li");
-        li.className = "contrib-item";
-        li.innerHTML = `
-      <span class="rank">${i + 1}</span>
-      <span class="contrib-avatar" style="background:${c.color}">${initials}</span>
-      <span class="contrib-name">${c.name}</span>
-      <span class="contrib-hours">${c.hours}</span>
-    `;
-        contribList.appendChild(li);
-      });
-    </script>
+    <script src="../js/layout.js"></script>
   </body>
 </html>

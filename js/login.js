@@ -1,153 +1,211 @@
-function validateEmail(email) {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
-}
+/**
+ * Login — POST /api/v1/auth/login
+ * Body: { email, password }
+ * Response: { success, message, data: { user, token } }
+ */
+(function () {
+  const form = document.getElementById("loginForm");
+  if (!form) return;
 
-// Show error message
-function showError(inputId, errorId, message) {
-  const input = document.getElementById(inputId);
-  const errorEl = document.getElementById(errorId);
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password");
+  const rememberMeInput = document.getElementById("rememberMe");
+  const submitBtn = form.querySelector(".login-button");
+  const formErrorEl = document.getElementById("loginFormError");
 
-  input.classList.add("error");
-  input.classList.remove("success");
-  errorEl.textContent = message;
-}
-
-// Show success state
-function showSuccess(inputId) {
-  const input = document.getElementById(inputId);
-  input.classList.remove("error");
-  input.classList.add("success");
-}
-
-// Clear error
-function clearError(inputId, errorId) {
-  const input = document.getElementById(inputId);
-  const errorEl = document.getElementById(errorId);
-
-  input.classList.remove("error");
-  errorEl.textContent = "";
-}
-
-// LOGIN FORM SUBMISSION
-
-document.getElementById("loginForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value;
-  const rememberMe = document.getElementById("rememberMe").checked;
-
-  let hasErrors = false;
-
-  // Validate email
-  if (!email) {
-    showError("email", "emailError", "❌ Email is required");
-    hasErrors = true;
-  } else if (!validateEmail(email)) {
-    showError("email", "emailError", "❌ Please enter a valid email address");
-    hasErrors = true;
-  } else {
-    showSuccess("email");
+  function validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 
-  // Validate password
-  if (!password) {
-    showError("password", "passwordError", "❌ Password is required");
-    hasErrors = true;
-  } else if (password.length < 6) {
-    showError(
-      "password",
-      "passwordError",
-      "❌ Password must be at least 6 characters",
-    );
-    hasErrors = true;
-  } else {
-    showSuccess("password");
+  function showError(inputId, errorId, message) {
+    const input = document.getElementById(inputId);
+    const errorEl = document.getElementById(errorId);
+    if (input) {
+      input.classList.add("error");
+      input.classList.remove("success");
+    }
+    if (errorEl) errorEl.textContent = message;
   }
 
-  // If no errors, proceed
-  if (!hasErrors) {
-    // Save "remember me" preference
-    if (rememberMe) {
-      localStorage.setItem("userEmail", email);
-      localStorage.setItem("rememberMe", "true");
+  function showSuccess(inputId) {
+    const input = document.getElementById(inputId);
+    if (!input) return;
+    input.classList.remove("error");
+    input.classList.add("success");
+  }
+
+  function clearError(inputId, errorId) {
+    const input = document.getElementById(inputId);
+    const errorEl = document.getElementById(errorId);
+    if (input) input.classList.remove("error");
+    if (errorEl) errorEl.textContent = "";
+  }
+
+  function setFormError(message) {
+    if (!formErrorEl) {
+      if (message) alert(message);
+      return;
+    }
+    formErrorEl.textContent = message || "";
+  }
+
+  function setLoading(isLoading) {
+    if (!submitBtn) return;
+    submitBtn.disabled = isLoading;
+    submitBtn.dataset.originalText =
+      submitBtn.dataset.originalText || submitBtn.textContent;
+    submitBtn.textContent = isLoading ? "Logging in..." : submitBtn.dataset.originalText;
+  }
+
+  function dashboardForRole(role) {
+    if (role === "COORDINATOR") return "./coordinator/dashboard.html";
+    if (role === "ADMIN") return "./dashboard.html";
+    return "./dashboard.html";
+  }
+
+  function showSuccessMessage(message) {
+    const modal = document.getElementById("successModal");
+    const msgEl = document.getElementById("successMessage");
+    if (msgEl) msgEl.textContent = message;
+    if (modal) modal.style.display = "flex";
+  }
+
+  window.closeSuccess = function closeSuccess() {
+    const modal = document.getElementById("successModal");
+    if (modal) modal.style.display = "none";
+    const user = window.VolunityAPI?.getStoredUser?.();
+    window.location.href = dashboardForRole(user?.role);
+  };
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    setFormError("");
+
+    const email = emailInput.value.trim();
+    const password = passwordInput.value;
+    const rememberMe = rememberMeInput.checked;
+    let hasErrors = false;
+
+    if (!email) {
+      showError("email", "emailError", "Email is required");
+      hasErrors = true;
+    } else if (!validateEmail(email)) {
+      showError("email", "emailError", "Please enter a valid email address");
+      hasErrors = true;
     } else {
-      localStorage.removeItem("userEmail");
-      localStorage.removeItem("rememberMe");
+      clearError("email", "emailError");
+      showSuccess("email");
     }
 
-    // Show success message
-    showSuccessMessage(`You have successfully logged in as ${email}`);
+    if (!password) {
+      showError("password", "passwordError", "Password is required");
+      hasErrors = true;
+    } else if (password.length < 6) {
+      showError(
+        "password",
+        "passwordError",
+        "Password must be at least 6 characters",
+      );
+      hasErrors = true;
+    } else {
+      clearError("password", "passwordError");
+      showSuccess("password");
+    }
 
-    // Clear form
-    this.reset();
-  }
-});
+    if (hasErrors) return;
 
-// REAL-TIME EMAIL VALIDATION
+    if (!window.VolunityAPI) {
+      setFormError("API helper failed to load. Refresh and try again.");
+      return;
+    }
 
-document.getElementById("email").addEventListener("blur", function () {
-  if (this.value && !validateEmail(this.value)) {
-    showError("email", "emailError", "⚠️ Invalid email format");
-  } else if (this.value) {
-    clearError("email", "emailError");
-  }
-});
+    const { apiRequest, saveAuthSession } = window.VolunityAPI;
+    setLoading(true);
 
-// REMEMBER ME FUNCTIONALITY
+    try {
+      const { response, data } = await apiRequest("/api/v1/auth/login", {
+        method: "POST",
+        body: JSON.stringify({ email, password }),
+      });
 
-window.addEventListener("load", function () {
-  // Check if user was previously remembered
-  const rememberMe = localStorage.getItem("rememberMe");
-  const userEmail = localStorage.getItem("userEmail");
+      if (!response.ok || !data?.success) {
+        const message =
+          data?.message || "Invalid email or password. Please try again.";
+        setFormError(message);
+        showError("password", "passwordError", "");
+        showError("email", "emailError", "");
+        return;
+      }
 
-  if (rememberMe === "true" && userEmail) {
-    document.getElementById("email").value = userEmail;
-    document.getElementById("rememberMe").checked = true;
-  }
-});
+      const token = data?.data?.token;
+      const user = data?.data?.user;
 
-// SUCCESS MESSAGE MODAL
+      saveAuthSession({ token, user });
 
-function showSuccessMessage(message) {
-  const modal = document.getElementById("successModal");
-  document.getElementById("successMessage").textContent = message;
-  modal.style.display = "flex";
-}
+      if (rememberMe) {
+        localStorage.setItem("userEmail", email);
+        localStorage.setItem("rememberMe", "true");
+      } else {
+        localStorage.removeItem("userEmail");
+        localStorage.removeItem("rememberMe");
+      }
 
-function closeSuccess() {
-  document.getElementById("successModal").style.display = "none";
-}
+      const displayName = user?.firstName
+        ? `${user.firstName}${user.lastName ? " " + user.lastName : ""}`
+        : email;
 
-// Close modal when clicking outside
-document.getElementById("successModal").addEventListener("click", function (e) {
-  if (e.target === this) {
-    closeSuccess();
-  }
-});
-
-// GOOGLE LOGIN (Placeholder)
-
-document.querySelector(".google-login").addEventListener("click", function (e) {
-  e.preventDefault();
-  alert("Google login integration coming soon!");
-});
-
-// FORGOT PASSWORD LINK
-
-document
-  .querySelector(".forgot-password")
-  .addEventListener("click", function (e) {
-    e.preventDefault();
-    alert("Forgot password page coming soon!");
+      showSuccessMessage(
+        data?.message
+          ? `${data.message}. Welcome back, ${displayName}!`
+          : `Welcome back, ${displayName}!`,
+      );
+    } catch (err) {
+      console.error("Login error:", err);
+      setFormError(
+        "Unable to reach the server. Check your connection and try again.",
+      );
+    } finally {
+      setLoading(false);
+    }
   });
 
-// SIGN UP LINK
-
-document
-  .querySelector(".signup-link a")
-  .addEventListener("click", function (e) {
-    e.preventDefault();
-    alert("Sign up page coming soon!");
+  emailInput.addEventListener("blur", function () {
+    if (this.value && !validateEmail(this.value)) {
+      showError("email", "emailError", "Invalid email format");
+    } else if (this.value) {
+      clearError("email", "emailError");
+    }
   });
+
+  window.addEventListener("load", function () {
+    const rememberMe = localStorage.getItem("rememberMe");
+    const userEmail = localStorage.getItem("userEmail");
+    if (rememberMe === "true" && userEmail) {
+      emailInput.value = userEmail;
+      rememberMeInput.checked = true;
+    }
+  });
+
+  const successModal = document.getElementById("successModal");
+  if (successModal) {
+    successModal.addEventListener("click", function (e) {
+      if (e.target === this) window.closeSuccess();
+    });
+  }
+
+  const googleBtn = document.querySelector(".google-login");
+  if (googleBtn) {
+    googleBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      alert("Google login integration coming soon!");
+    });
+  }
+
+  const forgotLink = document.querySelector(".forgot-password");
+  if (forgotLink) {
+    forgotLink.addEventListener("click", function (e) {
+      e.preventDefault();
+      alert("Forgot password page coming soon!");
+    });
+  }
+})();

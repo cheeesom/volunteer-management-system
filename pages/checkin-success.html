@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Tasks — Volunity</title>
+    <title>Check In — Volunity</title>
     <link rel="stylesheet" href="../css/layout.css" />
-    <link rel="stylesheet" href="../css/tasks.css" />
+    <link rel="stylesheet" href="../css/checkin.css" />
   </head>
-  <body data-nav="tasks">
+  <body data-nav="checkin">
     <div class="app-shell">
 
       <div class="sidebar-overlay" aria-hidden="true"></div>
@@ -33,12 +33,12 @@
             Explore
           </a>
 
-          <a class="sidebar-link is-active" href="tasks.html" data-nav="tasks">
+          <a class="sidebar-link" href="tasks.html" data-nav="tasks">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l2 2 4-4"/><rect x="4" y="3" width="16" height="18" rx="2"/></svg>
             Tasks
           </a>
 
-          <a class="sidebar-link" href="checkin.html" data-nav="checkin">
+          <a class="sidebar-link is-active" href="checkin.html" data-nav="checkin">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3"/></svg>
             Check In
           </a>
@@ -76,7 +76,7 @@
             <button class="topbar-toggle" type="button" data-sidebar-toggle aria-label="Toggle navigation">
               <span></span><span></span><span></span>
             </button>
-            <h1 class="topbar-title">My Tasks</h1>
+            <h1 class="topbar-title">Check In</h1>
           </div>
           <div class="topbar-right">
             <a class="topbar-icon-btn" href="notifications.html" aria-label="Notifications">
@@ -95,77 +95,23 @@
         </header>
         <div class="page-content">
 
-          <div class="task-tabs" role="tablist">
-            <button class="task-tab is-active" type="button" role="tab" aria-selected="true" data-tab="progress">In Progress</button>
-            <button class="task-tab" type="button" role="tab" aria-selected="false" data-tab="completed">Completed</button>
-          </div>
-
-          <div class="task-panel" data-panel="progress">
-            <ul class="task-list">
-              <li class="task-card">
-                <img class="task-thumb" src="https://images.unsplash.com/photo-1618477461853-cf6ed80faba5?w=200&h=160&fit=crop" alt="" />
-                <div>
-                  <h3 class="task-title">Beach Clean up Drive</h3>
-                  <p class="task-meta">May 26, 2026, Lagos, Nigeria</p>
-                </div>
-                <span class="badge badge--success">In Progress</span>
-              </li>
-              <li class="task-card">
-                <img class="task-thumb" src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=200&h=160&fit=crop" alt="" />
-                <div>
-                  <h3 class="task-title">Tree Planting</h3>
-                  <p class="task-meta">May 28, 2026, Abuja, Nigeria</p>
-                </div>
-                <span class="badge badge--upcoming">Upcoming</span>
-              </li>
-              <li class="task-card">
-                <img class="task-thumb" src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=200&h=160&fit=crop" alt="" />
-                <div>
-                  <h3 class="task-title">Community Food Drive</h3>
-                  <p class="task-meta">May 30, 2026, Ibadan, Nigeria</p>
-                </div>
-                <span class="badge badge--upcoming">Upcoming</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="task-panel" data-panel="completed" hidden>
-            <ul class="task-list">
-              <li class="task-card">
-                <img class="task-thumb" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=200&h=160&fit=crop" alt="" />
-                <div>
-                  <h3 class="task-title">Youth Mentorship Session</h3>
-                  <p class="task-meta">May 10, 2026, Online</p>
-                </div>
-                <span class="badge badge--neutral">Completed</span>
-              </li>
-              <li class="task-card">
-                <img class="task-thumb" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=200&h=160&fit=crop" alt="" />
-                <div>
-                  <h3 class="task-title">Health Awareness Booth</h3>
-                  <p class="task-meta">April 22, 2026, Lagos, Nigeria</p>
-                </div>
-                <span class="badge badge--neutral">Completed</span>
-              </li>
-            </ul>
+          <div class="checkin-success">
+            <div class="success-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <h2>You're Checked In!</h2>
+            <p>Your attendance has been recorded for this project</p>
+            <div class="card success-project">
+              <h3>Beach Cleanup Drive</h3>
+              <p>Checked in at 9:04 AM · Estimated time: 4 Hours</p>
+            </div>
+            <a class="btn btn--primary" href="dashboard.html">Back to Dashboard</a>
           </div>
 
         </div>
       </div>
     </div>
     <script src="../js/layout.js"></script>
-<script>
-document.querySelectorAll(".task-tab").forEach((tab) => {
-  tab.addEventListener("click", () => {
-    document.querySelectorAll(".task-tab").forEach((t) => {
-      t.classList.toggle("is-active", t === tab);
-      t.setAttribute("aria-selected", t === tab ? "true" : "false");
-    });
-    document.querySelectorAll(".task-panel").forEach((panel) => {
-      panel.hidden = panel.dataset.panel !== tab.dataset.tab;
-    });
-  });
-});
-</script>
+
   </body>
 </html>

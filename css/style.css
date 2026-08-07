@@ -9,3 +9,30 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+
+.signup-status {
+  min-height: 1.25rem;
+  margin: 8px 0 12px;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.signup-status--error {
+  color: #c62828;
+}
+
+.signup-status--success {
+  color: #2e7d32;
+}
+
+button.register-btn:disabled,
+button.create-acct-btn:disabled,
+button.signup-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+button.signup-btn {
+  border: none;
+  font: inherit;
+}
