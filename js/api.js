@@ -33,6 +33,30 @@ function clearAuthSession() {
 }
 
 /**
+ * Redirect unauthenticated users to login.
+ * Optionally require a specific role (e.g. "COORDINATOR").
+ */
+function requireAuth({ role = null, loginPath = "../login.html" } = {}) {
+  const token = getAuthToken();
+  const user = getStoredUser();
+
+  if (!token || !user) {
+    window.location.href = loginPath;
+    return null;
+  }
+
+  if (role && user.role !== role) {
+    window.location.href =
+      user.role === "COORDINATOR"
+        ? "./dashboard.html"
+        : "../dashboard.html";
+    return null;
+  }
+
+  return user;
+}
+
+/**
  * Fetch wrapper for Volunity API
  * @param {string} path - e.g. "/api/v1/auth/register"
  * @param {RequestInit & { auth?: boolean }} options
@@ -74,5 +98,6 @@ window.VolunityAPI = {
   getStoredUser,
   saveAuthSession,
   clearAuthSession,
+  requireAuth,
   apiRequest,
 };
