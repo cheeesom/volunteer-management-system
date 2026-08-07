@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard — Volunity Coordinator</title>
+    <link rel="stylesheet" href="../../css/layout.css" />
+    <link rel="stylesheet" href="../../css/coordinator.css" />
+    <link rel="stylesheet" href="../../css/coordinator-dashboard.css" />
+  </head>
+  <body data-nav="dashboard">
+    <div class="app-shell">
+
+      <div class="sidebar-overlay" aria-hidden="true"></div>
+      <aside class="sidebar" aria-label="Main navigation">
+        <a class="sidebar-brand" href="dashboard.html">
+          <img src="../../assets/logo/logo.svg" alt="" />
+          <span class="sidebar-brand-text">Volunity</span>
+        </a>
+        <nav class="sidebar-nav">
+
+          <a class="sidebar-link is-active" href="dashboard.html" data-nav="dashboard">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+            Dashboard
+          </a>
+
+          <a class="sidebar-link" href="projects.html" data-nav="projects">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18v12H3z"/><path d="M3 11h18M8 7V5h8v2"/></svg>
+            Projects
+          </a>
+
+          <a class="sidebar-link" href="applications.html" data-nav="applications">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="3"/></svg>
+            Applications
+          </a>
+
+          <a class="sidebar-link" href="volunteers.html" data-nav="volunteers">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Volunteers
+          </a>
+
+          <a class="sidebar-link" href="tasks.html" data-nav="tasks">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l2 2 4-4"/><rect x="4" y="3" width="16" height="18" rx="2"/></svg>
+            Tasks
+          </a>
+
+          <a class="sidebar-link" href="attendance.html" data-nav="attendance">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+            Attendance
+          </a>
+
+          <a class="sidebar-link" href="reports.html" data-nav="reports">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2h9l3 3v17H6z"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
+            Reports
+          </a>
+
+          <a class="sidebar-link" href="certificate.html" data-nav="certificate">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="4"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg>
+            Certificate
+          </a>
+
+          <a class="sidebar-link" href="message.html" data-nav="message">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.5 8.5 0 1 1-4-7.2L21 3l-1 4.6a8.4 8.4 0 0 1 1 3.9z"/></svg>
+            Message
+          </a>
+        </nav>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-footer">
+          <a class="sidebar-link" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1.1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg> Settings</a>
+          <a class="sidebar-link" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.7 2.2c-.9.5-1.2 1-1.2 1.8"/><path d="M12 17h.01"/></svg> Help &amp; Support</a>
+          <a class="sidebar-link is-danger" href="../login.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg> Logout</a>
+        </div>
+      </aside>
+      <div class="app-main">
+
+        <header class="topbar">
+          <div class="topbar-left">
+            <button class="topbar-toggle" type="button" data-sidebar-toggle aria-label="Toggle navigation">
+              <span></span><span></span><span></span>
+            </button>
+            <div class="topbar-title">Dashboard</div>
+          </div>
+          <div class="topbar-right">
+            <a class="topbar-icon-btn" href="#" aria-label="Notifications">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+              <span class="topbar-badge">1</span>
+            </a>
+            <a class="topbar-profile" href="#" aria-label="Account">
+              <img class="topbar-avatar" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=96&h=96&fit=crop&crop=faces" alt="" />
+              <span class="topbar-user">
+                <span class="topbar-user-name">Sarah Johnson</span>
+                <span class="topbar-user-role">Project Coordinator</span>
+              </span>
+              <svg class="topbar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+          </div>
+        </header>
+        <div class="page-content">
+
+          <div class="page-intro-row">
+            <div>
+              <h2>Welcome back, Sarah!</h2>
+              <p>Here's what's happening with your projects today.</p>
+            </div>
+            <button class="date-pill" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+              May 1 – May 31, 2026
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+          </div>
+
+          <section class="metric-row">
+            <article class="metric-card">
+              <div class="metric-card__top">
+                <div class="metric-card__icon metric-card__icon--blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18v12H3z"/><path d="M3 11h18M8 7V5h8v2"/></svg></div>
+                <p class="metric-card__label">Active Projects</p>
+              </div>
+              <p class="metric-card__value">12</p>
+              <p class="metric-card__meta">+3 from last week</p>
+            </article>
+            <article class="metric-card">
+              <div class="metric-card__top">
+                <div class="metric-card__icon metric-card__icon--green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                <p class="metric-card__label">Assigned Volunteers</p>
+              </div>
+              <p class="metric-card__value">156</p>
+              <p class="metric-card__meta">+18 from last week</p>
+            </article>
+            <article class="metric-card">
+              <div class="metric-card__top">
+                <div class="metric-card__icon metric-card__icon--amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l2 2 4-4"/><rect x="4" y="3" width="16" height="18" rx="2"/></svg></div>
+                <p class="metric-card__label">Pending Task</p>
+              </div>
+              <p class="metric-card__value">28</p>
+              <p class="metric-card__meta">+5 from last week</p>
+            </article>
+            <article class="metric-card">
+              <div class="metric-card__top">
+                <div class="metric-card__icon metric-card__icon--rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+                <p class="metric-card__label">Completed Task</p>
+              </div>
+              <p class="metric-card__value">84</p>
+              <p class="metric-card__meta">+12 from last week</p>
+            </article>
+          </section>
+
+          <div class="coord-mid-grid">
+            <section class="card">
+              <div class="card-header">
+                <h3 class="card-title">Project Progress Overview</h3>
+                <a class="card-link" href="projects.html">View all</a>
+              </div>
+              <ul class="progress-list">
+                
+                <li class="progress-item">
+                  <div class="progress-item__head"><span>Community Clean Up</span><strong>80%</strong></div>
+                  <div class="progress-track"><div class="progress-fill" style="width:80%"></div></div>
+                </li>
+                <li class="progress-item">
+                  <div class="progress-item__head"><span>Youth Education Program</span><strong>50%</strong></div>
+                  <div class="progress-track"><div class="progress-fill" style="width:50%"></div></div>
+                </li>
+                <li class="progress-item">
+                  <div class="progress-item__head"><span>Food Donation Drive</span><strong>40%</strong></div>
+                  <div class="progress-track"><div class="progress-fill" style="width:40%"></div></div>
+                </li>
+                <li class="progress-item">
+                  <div class="progress-item__head"><span>Tree Planting Initiative</span><strong>100%</strong></div>
+                  <div class="progress-track"><div class="progress-fill" style="width:100%"></div></div>
+                </li>
+                <li class="progress-item">
+                  <div class="progress-item__head"><span>Health Awareness Campaign</span><strong>20%</strong></div>
+                  <div class="progress-track"><div class="progress-fill" style="width:20%"></div></div>
+                </li>
+              </ul>
+            </section>
+
+            <section class="card">
+              <div class="card-header"><h3 class="card-title">Today's Activities</h3></div>
+              <ul class="timeline-list">
+                <li><span class="timeline-dot"></span><div><strong>Team meeting</strong><p>Community Clean Up</p></div><time>09:00 AM</time></li>
+                <li><span class="timeline-dot"></span><div><strong>Review volunteer application</strong><p>Shortlist new volunteers</p></div><time>01:00 PM</time></li>
+                <li><span class="timeline-dot"></span><div><strong>Site visit - Clean Water Initiative</strong><p>Location: Ikorodu Community</p></div><time>01:00 PM</time></li>
+                <li><span class="timeline-dot"></span><div><strong>Update project tasks</strong><p>Review and assign pending tasks</p></div><time>04:30 PM</time></li>
+              </ul>
+            </section>
+
+            <section class="card">
+              <div class="card-header">
+                <h3 class="card-title">Recent Notifications</h3>
+                <a class="card-link" href="#">View all</a>
+              </div>
+              <ul class="feed-list">
+                <li><span class="feed-icon feed-icon--amber">!</span><div><strong>Task "Community Survey" overdue</strong><p>Due May 18 · 10m ago</p></div></li>
+                <li><span class="feed-icon feed-icon--green">+</span><div><strong>12 new Volunteer applications</strong><p>1h ago</p></div></li>
+                <li><span class="feed-icon feed-icon--rose">!</span><div><strong>Attendance not marked for 8 volunteers</strong><p>5h ago</p></div></li>
+                <li><span class="feed-icon feed-icon--amber">!</span><div><strong>Task "Community Survey" overdue</strong><p>1h ago</p></div></li>
+              </ul>
+            </section>
+          </div>
+
+          <div class="coord-bottom-grid">
+            <section class="card">
+              <div class="card-header">
+                <h3 class="card-title">Upcoming Deadlines</h3>
+                <a class="card-link" href="#">View Calendar</a>
+              </div>
+              <div class="mini-table-wrap">
+                <table class="mini-table">
+                  <thead><tr><th>Task/Milestone</th><th>Project</th><th>Due Date</th></tr></thead>
+                  <tbody>
+                    <tr><td>Community Survey</td><td>Water Initiative</td><td>May 21, 2026</td></tr><tr><td>Community Survey</td><td>Water Initiative</td><td>May 21, 2026</td></tr><tr><td>Community Survey</td><td>Water Initiative</td><td>May 21, 2026</td></tr><tr><td>Community Survey</td><td>Water Initiative</td><td>May 21, 2026</td></tr><tr><td>Community Survey</td><td>Water Initiative</td><td>May 21, 2026</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <section class="card avail-card">
+              <div class="card-header"><h3 class="card-title">Volunteer Availability</h3></div>
+              <div class="donut-block">
+                <div class="donut" aria-label="156 total volunteers">
+                  <svg viewBox="0 0 120 120">
+                    <circle cx="60" cy="60" r="44" fill="none" stroke="#c8e6c9" stroke-width="14" stroke-dasharray="122 276" transform="rotate(-90 60 60)"/>
+                    <circle cx="60" cy="60" r="44" fill="none" stroke="#42a5f5" stroke-width="14" stroke-dasharray="110 276" stroke-dashoffset="-122" transform="rotate(-90 60 60)"/>
+                    <circle cx="60" cy="60" r="44" fill="none" stroke="#ffb74d" stroke-width="14" stroke-dasharray="44 276" stroke-dashoffset="-232" transform="rotate(-90 60 60)"/>
+                  </svg>
+                  <div class="donut-center"><strong>156</strong><span>Total</span></div>
+                </div>
+                <ul class="donut-legend">
+                  <li><span class="swatch swatch--green"></span>Available <strong>68 (44%)</strong></li>
+                  <li><span class="swatch swatch--blue"></span>Busy <strong>62 (40%)</strong></li>
+                  <li><span class="swatch swatch--amber"></span>Unavailable <strong>26 (17%)</strong></li>
+                </ul>
+              </div>
+              <button class="btn btn--outline" type="button" style="margin-top:14px">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18"/></svg>
+                View Volunteer Calendar
+              </button>
+            </section>
+
+            <section class="card">
+              <div class="card-header">
+                <h3 class="card-title">Recent Activities</h3>
+                <a class="card-link" href="#">View all</a>
+              </div>
+              <ul class="feed-list">
+                <li><span class="feed-icon feed-icon--amber">✓</span><div><strong>Jane Doe completed a task</strong><p>2h ago</p></div></li>
+                <li><span class="feed-icon feed-icon--green">+</span><div><strong>New Volunteer registered</strong><p>John Michael · 5h ago</p></div></li>
+                <li><span class="feed-icon feed-icon--rose">✓</span><div><strong>25 volunteers marked attendance</strong><p>12h ago</p></div></li>
+                <li><span class="feed-icon feed-icon--blue">+</span><div><strong>New project added</strong><p>1d ago</p></div></li>
+              </ul>
+            </section>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <script src="../../js/layout.js"></script>
+
+  </body>
+</html>

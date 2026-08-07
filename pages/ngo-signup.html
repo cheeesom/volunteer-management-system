@@ -30,7 +30,7 @@
               </p>
             </div>
 
-            <form id="signup-form" class="signup-form">
+            <form id="signup-form" class="signup-form" data-role="ADMIN">
               <!-- NGO INFORMATION -->
 
               <div class="form-section">
@@ -69,20 +69,33 @@
                 <h2>Personal Details</h2>
 
                 <div class="form-group">
-                  <label for="Full Name">Full Name</label>
+                  <label for="firstName">First Name</label>
                   <div class="input-box">
                     <img src="../assets/icons/iconamoon_profile.svg" alt="" />
                     <input
                       type="text"
-                      id="fullname"
-                      placeholder="Jane Doe"
+                      id="firstName"
+                      placeholder="Jane"
                       required
                     />
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="work-em">Work Email Address</label>
+                  <label for="lastName">Last Name</label>
+                  <div class="input-box">
+                    <img src="../assets/icons/iconamoon_profile.svg" alt="" />
+                    <input
+                      type="text"
+                      id="lastName"
+                      placeholder="Doe"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Work Email Address</label>
                   <div class="input-box">
                     <img src="../assets/icons/oui_email.svg" alt="" />
                     <input
@@ -94,7 +107,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label>Password</label>
+                  <label for="password">Password</label>
                   <div class="input-box">
                     <input
                       class="password-input"
@@ -108,7 +121,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label>Confirm Password</label>
+                  <label for="confirm-password">Confirm Password</label>
                   <div class="input-box">
                     <input
                       type="password"
@@ -121,10 +134,12 @@
                 </div>
               </div>
 
-              <a href="./login.html" class="signup-btn">
+              <p id="signup-status" class="signup-status" role="status" aria-live="polite"></p>
+
+              <button type="submit" class="signup-btn">
                 Complete Registration
                 <img src="../assets/icons/Margin (2).svg" alt="" />
-              </a>
+              </button>
             </form>
           </div>
 
@@ -139,6 +154,7 @@
         </div>
       </section>
     </main>
+    <script src="../js/api.js"></script>
     <script src="../js/signup.js"></script>
   </body>
 </html>

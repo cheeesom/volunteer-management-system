@@ -175,23 +175,22 @@
 
             <!-- Terms -->
             <div class="form-footer">
+              <div class="terms">
+                <label for="terms">
+                  <input type="checkbox" id="terms" class="checkbox" required />
+                  I agree to the Terms of Service and Privacy Policy regarding my
+                  volunteer data.
+                </label>
 
-            <div class="terms">
+                <p id="signup-status" class="signup-status" role="status" aria-live="polite"></p>
 
-              <label for="terms">
-                 <input type="checkbox" id="terms" class="checkbox" required/>
-                I agree to the Terms of Service and Privacy Policy regarding my
-                volunteer data.
-              </label>
-
-            <!-- Button -->
-
-            <a href="./login.html" class="register-btn">Register</a>
-             </div>
-             </div>
+                <button type="submit" class="register-btn">Register</button>
+              </div>
+            </div>
         </form>
       </section>
     </main>
+    <script src="../js/api.js"></script>
     <script src="../js/signup.js"></script>
   </body>
 </html>
