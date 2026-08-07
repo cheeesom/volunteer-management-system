@@ -102,9 +102,93 @@
   justify-content: center;
   border-radius: 15px;
   padding: 20px 16px;
+  text-decoration: none;
   gap: 2px;
   color: #cbffc2;
   background-color: #2e7d32;
   cursor: pointer;
   transition: 0.3s ease;
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+  .header-logo {
+    margin-top: 30px;
+    padding-left: 24px;
+  }
+
+  .signup-container {
+    padding: 20px 24px;
+  }
+
+  .signup-content {
+    padding: 32px 24px;
+  }
+
+  .signup-heading h1 {
+    font-size: 32px;
+  }
+
+  .signup-heading p {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .form-section {
+    padding: 24px 12px;
+  }
+
+  .signup-btn {
+    padding: 18px;
+    font-size: 16px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .header-logo {
+    margin-top: 20px;
+    padding-left: 16px;
+  }
+
+  .signup-container {
+    padding: 16px;
+  }
+
+  .signup-content {
+    padding: 20px 16px;
+  }
+
+  .signup-heading h1 {
+    font-size: 26px;
+    line-height: 34px;
+  }
+
+  .signup-heading p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .form-section {
+    padding: 20px 0;
+  }
+
+  .form-section h2 {
+    font-size: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .input-box input {
+    height: 50px;
+    font-size: 15px;
+  }
+
+  .signup-btn {
+    width: 100%;
+    padding: 16px;
+    font-size: 15px;
+  }
 }
